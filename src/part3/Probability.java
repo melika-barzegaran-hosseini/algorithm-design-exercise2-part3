@@ -32,6 +32,7 @@ public class Probability
 
     private void compute()
     {
+        System.out.println("the probability of picking a red ball = " + probability);
         Integer[] numbers = {30, 300, 3000, 30000};
 
         for(Integer number : numbers)
@@ -48,7 +49,16 @@ public class Probability
 
     public static void main(String args[])
     {
-        if(args.length == 1)
+        if(args.length == 0)
+        {
+            for(int counter = 0; counter <= 10; counter++)
+            {
+                Probability probability = new Probability(Double.toString(counter / 10.0));
+                probability.compute();
+                System.out.println();
+            }
+        }
+        else if(args.length == 1)
         {
             Probability probability = new Probability(args[0]);
             probability.compute();
